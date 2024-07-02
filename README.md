@@ -1,1 +1,1 @@
-# :school: Домашние работы по блоку Django DRF
+# :school: Домашние работы по блоку Django Rest Framework
