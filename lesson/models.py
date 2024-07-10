@@ -23,7 +23,12 @@ class Lesson(models.Model):
         help_text="Приложите ссылку на видео урока",
         **NULLABLE
     )
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, verbose_name='Владелец', **NULLABLE)
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        verbose_name="Владелец",
+        **NULLABLE
+    )
 
     def __str__(self):
         return self.title

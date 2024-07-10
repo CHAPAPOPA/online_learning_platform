@@ -396,6 +396,46 @@
     }
   },
   {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$GjhmtU2Ns7U72Du10PNZc6$ZMhLkK2FVM+kasgj2TdDhEbUNnwpNu+1aLUH/YwhZQU=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-10T11:50:53.177Z",
+      "email": "test1@yandex.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$mcdIz8rC3ZpJCHCqrQMukc$IC4K7EqYrx1RNBzkWPFApV35ppuzJ/8J2/MeuGyl6lU=",
+      "last_login": null,
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-07-10T11:51:18.604Z",
+      "email": "admin",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
     "model": "course.course",
     "pk": 2,
     "fields": {
@@ -403,6 +443,18 @@
       "price": 1000,
       "preview": "",
       "description": "Лекция 1",
+      "owner": null,
+      "lessons": []
+    }
+  },
+  {
+    "model": "course.course",
+    "pk": 3,
+    "fields": {
+      "title": "Системы линейных уравнений",
+      "price": 1000,
+      "preview": "",
+      "description": "Лекция 2",
       "owner": null,
       "lessons": []
     }
