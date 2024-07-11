@@ -22,8 +22,7 @@ class LessonCreateAPIView(generics.CreateAPIView):
     permission_classes = [~IsModerator]
 
     def perform_create(self, serializer):
-        lesson = serializer.save()
-        lesson.owner = self.request.user
+        lesson = serializer.save(owner=self.request.user)
         lesson.save()
 
 
@@ -42,4 +41,4 @@ class LessonUpdateAPIView(generics.UpdateAPIView):
 class LessonDestroyAPIView(generics.DestroyAPIView):
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
-    permission_classes = [IsOwner]
+    permission_classes = [~IsModerator & IsOwner]
