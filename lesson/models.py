@@ -1,5 +1,7 @@
 from django.db import models
 
+from config import settings
+
 NULLABLE = {"blank": True, "null": True}
 
 
@@ -19,6 +21,12 @@ class Lesson(models.Model):
     url = models.URLField(
         verbose_name="Ссылка на видео",
         help_text="Приложите ссылку на видео урока",
+        **NULLABLE
+    )
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        verbose_name="Владелец",
         **NULLABLE
     )
 
