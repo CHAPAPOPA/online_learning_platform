@@ -8,5 +8,5 @@ class LessonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lesson
-        fields = '__all__'
-        validators = [UrlValidator(field='url')]
+        fields = "__all__"
+        validators = [UrlValidator(field="url")]

@@ -3,12 +3,14 @@ from rest_framework import generics
 from users.permissions import IsModerator, IsOwner
 
 from .models import Lesson
+from .paginators import LessonPagination
 from .serializers import LessonSerializer
 
 
 class LessonListAPIView(generics.ListAPIView):
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
+    pagination_class = LessonPagination
 
     def get_queryset(self):
         user = self.request.user
@@ -22,7 +24,8 @@ class LessonCreateAPIView(generics.CreateAPIView):
     permission_classes = [~IsModerator]
 
     def perform_create(self, serializer):
-        lesson = serializer.save(owner=self.request.user)
+        lesson = serializer.save()
+        lesson.owner = self.request.user
         lesson.save()
 
 
@@ -41,4 +44,4 @@ class LessonUpdateAPIView(generics.UpdateAPIView):
 class LessonDestroyAPIView(generics.DestroyAPIView):
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
-    permission_classes = [~IsModerator & IsOwner]
+    permission_classes = [IsOwner]

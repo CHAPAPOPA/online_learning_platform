@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     "users",
     "course",
     "lesson",
-    'subscription'
+    "subscription",
 ]
 
 REST_FRAMEWORK = {
