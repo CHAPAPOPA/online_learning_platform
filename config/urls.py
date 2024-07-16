@@ -8,6 +8,7 @@ urlpatterns = [
     path("courses/", include("course.urls", namespace="courses")),
     path("lessons/", include("lesson.urls", namespace="lessons")),
     path("users/", include("users.urls", namespace="users")),
+    path('subscriptions/', include('subscription.urls', namespace='subscriptions'))
 ]
 
 if settings.DEBUG:
