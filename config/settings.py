@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "django_dump_load_utf8",
+    "drf-yasg",
     "users",
     "course",
     "lesson",
