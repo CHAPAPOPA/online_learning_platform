@@ -10,13 +10,13 @@ class SubscriptionAPIView(APIView):
 
     def post(self, *args, **kwargs):
         user = self.request.user
-        course_id = self.request.data.get('course')
+        course_id = self.request.data.get("course")
         course_item = get_object_or_404(Course, pk=course_id)
         subscribe_item = Subscription.objects.filter(user=user, course=course_item)
         if subscribe_item.exists():
             subscribe_item.delete()
-            message = 'Подписка удалена'
+            message = "Подписка удалена"
         else:
             Subscription.objects.create(user=user, course=course_item)
-            message = 'Подписка добавлена'
-        return Response({'message': message})
+            message = "Подписка добавлена"
+        return Response({"message": message})

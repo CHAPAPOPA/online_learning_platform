@@ -18,8 +18,8 @@ class AmountCreateAPIView(generics.CreateAPIView):
         amount = serializer.save()
         price = create_stripe_price(amount=amount.amount, course=amount.course)
         session = create_stripe_session(price=price)
-        amount.session_id = session.get('id')
-        amount.link = session.get('url')
+        amount.session_id = session.get("id")
+        amount.link = session.get("url")
         amount.save()
 
 
@@ -39,4 +39,4 @@ class AmountDestroyAPIView(generics.DestroyAPIView):
 
 
 class SuccessTemplateView(TemplateView):
-    template_name = 'amount/success.html'
+    template_name = "amount/success.html"
