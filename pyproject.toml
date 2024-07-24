@@ -19,6 +19,9 @@ coverage = "^7.6.0"
 drf-yasg = "^1.21.7"
 setuptools = "^71.0.0"
 stripe = "^10.3.0"
+redis = "^5.0.7"
+celery = "^5.4.0"
+django-celery-beat = "^2.6.0"
 
 
 [tool.poetry.group.lint.dependencies]
