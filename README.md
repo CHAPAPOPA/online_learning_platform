@@ -15,7 +15,7 @@ git clone https://github.com/CHAPAPOPA/online_learning_platform.git
 ### Перейдите в папку с проектом
 
 ```bash
-cd school
+cd online_learning_platform
 ```
 
 ### Установите зависимости:
