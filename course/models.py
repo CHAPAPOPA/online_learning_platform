@@ -1,6 +1,6 @@
+from django.conf import settings
 from django.db import models
 
-from config import settings
 from lesson.models import Lesson
 
 NULLABLE = {"blank": True, "null": True}
