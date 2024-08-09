@@ -51,6 +51,13 @@ python manage.py csu
 python manage.py loaddata fixture/school.json
 ```
 
+### Запуск приложения в Docker
+
+Для сборки образа и запуска контейнера, выполните команду
+   ```sh
+   docker-compose up -d --build
+   ```
+
 ## Запуск программы
 
 ### Сервер сайта
@@ -66,4 +73,4 @@ python manage.py runserver
 
 ## Тестирование
 
-![img.png](img.png)
+![img.png](img.png) 
